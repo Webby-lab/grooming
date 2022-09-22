@@ -9,51 +9,24 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Entity
-public class Dog extends Pet{
+public class Dog extends Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private Integer age;
-    @Enumerated(EnumType.STRING)
-    private Allergies allergies;
-    private List<Allergies> all = new ArrayList<Allergies>();
-
-//    @Column(length = 200)
-//    private List<String> allergies = new ArrayList<>();
+    @OneToMany
+    private List<Allergies> allergies = new ArrayList<>();
 
     public Dog() {
-
     }
 
     public Dog(String name, Integer age) {
-
         this.name = name;
         this.age = age;
     }
 
-    public Dog(String name, Integer age, List<Allergies> all) {
-        this.name = name;
-        this.age = age;
-        this.all = all;
-    }
-
-    public List<Allergies> getAll() {
-        return all;
-    }
-
-    public void setAll(List<Allergies> all) {
-        this.all = all;
-    }
-    //    public Dog(String name, Integer age, List<String> allergies) {
-//
-//        this.name = name;
-//        this.age = age;
-//        this.allergies = allergies;
-//    }
-
-
-    public Dog(String name, Integer age, Allergies allergies) {
+    public Dog(String name, Integer age, List<Allergies> allergies) {
         this.name = name;
         this.age = age;
         this.allergies = allergies;
@@ -83,26 +56,14 @@ public class Dog extends Pet{
         this.age = age;
     }
 
-    public Allergies getAllergies() {
+    public List<Allergies> getAllergies() {
         return allergies;
     }
 
-    public void setAllergies(Allergies allergies) {
+    public void setAllergies(List<Allergies> allergies) {
         this.allergies = allergies;
     }
 
-    @Override
-    public String toString() {
-        return all.toString();
-    }
-    //    public List<String> getAllergies() {
-//        return allergies;
-//    }
-//
-//    public void setAllergies(List<String> allergies) {
-//        this.allergies = allergies;
-//    }
-//
 //    @Override
 //    public String toString() {
 //        return allergies.toString();
