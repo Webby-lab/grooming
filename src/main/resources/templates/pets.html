@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pets</title>
+</head>
+
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>age</th>
+        <th>allargies</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="dog : ${dogs}">
+        <td th:text="*{dog.getId()}"></td>
+        <td th:text="*{dog.getName()}"></td>
+        <td th:text="*{dog.getAge()}"></td>
+        <td th:text="*{dog.getAllergies()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
