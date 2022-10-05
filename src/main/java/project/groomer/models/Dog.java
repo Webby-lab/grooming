@@ -1,12 +1,7 @@
 package project.groomer.models;
 
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.*;
 
 @Entity
 public class Dog extends Pet {
@@ -15,10 +10,22 @@ public class Dog extends Pet {
     private Integer id;
     private String name;
     private Integer age;
-    @OneToMany
-    private List<Allergies> allergies = new ArrayList<>();
+    private List<Allergy> allergies;
+    @Enumerated(EnumType.STRING)
+    private Treatment treatment;
 
     public Dog() {
+    }
+
+    public Dog(String name) {
+        this.name = name;
+    }
+
+
+    public Dog(String name, Integer age, List<Allergy> allergies) {
+        this.name = name;
+        this.age = age;
+        this.allergies = allergies;
     }
 
     public Dog(String name, Integer age) {
@@ -26,10 +33,11 @@ public class Dog extends Pet {
         this.age = age;
     }
 
-    public Dog(String name, Integer age, List<Allergies> allergies) {
+    public Dog(String name, Integer age, List<Allergy> allergies, Treatment treatment) {
         this.name = name;
         this.age = age;
         this.allergies = allergies;
+        this.treatment = treatment;
     }
 
     public Integer getId() {
@@ -56,16 +64,20 @@ public class Dog extends Pet {
         this.age = age;
     }
 
-    public List<Allergies> getAllergies() {
+    public List<Allergy> getAllergies() {
         return allergies;
     }
 
-    public void setAllergies(List<Allergies> allergies) {
+    public void setAllergies(List<Allergy> allergies) {
         this.allergies = allergies;
     }
 
-//    @Override
-//    public String toString() {
-//        return allergies.toString();
-//    }
+    public Treatment getTreatment() {
+        return treatment;
+    }
+
+    public void setTreatment(Treatment treatment) {
+        this.treatment = treatment;
+    }
 }
+

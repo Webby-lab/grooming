@@ -10,4 +10,5 @@ import java.util.List;
 public interface DogInMemoryRepository extends CrudRepository<Dog, Integer> {
 //    @Query(value = "SELECT * FROM dogrepair.dog", nativeQuery = true)
     List<Dog> findAll();
+Dog findByName(String name);
 }

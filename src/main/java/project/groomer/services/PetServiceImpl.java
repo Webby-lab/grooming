@@ -1,20 +1,19 @@
 package project.groomer.services;
 
 import org.springframework.stereotype.Service;
-import project.groomer.models.Allergies;
 import project.groomer.models.Dog;
-import project.groomer.repositories.AllergiesRepository;
+
 import project.groomer.repositories.DogInMemoryRepository;
 
 import java.util.List;
+
 @Service
 public class PetServiceImpl implements PetService {
     DogInMemoryRepository dogInMemoryRepository;
-AllergiesRepository allergiesRepository;
 
-    public PetServiceImpl(DogInMemoryRepository dogInMemoryRepository, AllergiesRepository allergiesRepository) {
+
+    public PetServiceImpl(DogInMemoryRepository dogInMemoryRepository) {
         this.dogInMemoryRepository = dogInMemoryRepository;
-        this.allergiesRepository = allergiesRepository;
     }
 
     @Override
@@ -28,12 +27,11 @@ AllergiesRepository allergiesRepository;
     }
 
     @Override
-    public List<Allergies> getAllAllergies() {
-        return allergiesRepository.findAll();
+    public Dog findByName(String name) {
+        return dogInMemoryRepository.findByName(name);
     }
 
-    @Override
-    public void saveAllergies(Allergies allergies) {
-    allergiesRepository.save(allergies);
-    }
+
+
+
 }
