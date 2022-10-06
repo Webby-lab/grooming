@@ -11,8 +11,8 @@ public class Dog extends Pet {
     private String name;
     private Integer age;
     private List<Allergy> allergies;
-    @Enumerated(EnumType.STRING)
-    private Treatment treatment;
+    @OneToOne(mappedBy = "dog" , cascade = {CascadeType.REMOVE, CascadeType.REFRESH})
+    private Appointment appointment;
 
     public Dog() {
     }
@@ -21,6 +21,10 @@ public class Dog extends Pet {
         this.name = name;
     }
 
+    public Dog(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
 
     public Dog(String name, Integer age, List<Allergy> allergies) {
         this.name = name;
@@ -28,16 +32,11 @@ public class Dog extends Pet {
         this.allergies = allergies;
     }
 
-    public Dog(String name, Integer age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public Dog(String name, Integer age, List<Allergy> allergies, Treatment treatment) {
+    public Dog(String name, Integer age, List<Allergy> allergies, Appointment appointment) {
         this.name = name;
         this.age = age;
         this.allergies = allergies;
-        this.treatment = treatment;
+        this.appointment = appointment;
     }
 
     public Integer getId() {
@@ -72,12 +71,6 @@ public class Dog extends Pet {
         this.allergies = allergies;
     }
 
-    public Treatment getTreatment() {
-        return treatment;
-    }
 
-    public void setTreatment(Treatment treatment) {
-        this.treatment = treatment;
-    }
 }
 

@@ -36,10 +36,7 @@ public class AllergiesConverter implements AttributeConverter<List<Allergy>, Str
                 if (all.getText().equals(splitted[i])) {
                     aaa.add(all);
                 }
-
-
             }
-
         }return aaa;
     }
 }

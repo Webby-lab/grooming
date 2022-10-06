@@ -7,5 +7,7 @@ import java.util.List;
 public interface PetService {
     List<Dog> getAll();
     void save(Dog dog);
-Dog findByName(String name);
+    Dog findByName(String name);
+    List<String> getNames();
+    void deleteDogById(Integer id);
 }

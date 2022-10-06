@@ -7,8 +7,12 @@ import project.groomer.models.Dog;
 
 import java.util.List;
 
-public interface DogInMemoryRepository extends CrudRepository<Dog, Integer> {
-//    @Query(value = "SELECT * FROM dogrepair.dog", nativeQuery = true)
+public interface DogRepository extends CrudRepository<Dog, Integer> {
+
     List<Dog> findAll();
-Dog findByName(String name);
+    Dog findByName(String name);
+
+        @Query(value = "SELECT name FROM dogrepair.dog", nativeQuery = true)
+    List<String> findAllNames();
+    void deleteById(Integer id);
 }
