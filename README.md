@@ -6,8 +6,8 @@
 <br />
 <div align="center">
  
-    <img src="img/api.jpg" alt="Logo">
-  </a>
+ <img src="img/api.jpg" alt="Logo" width="400">
+ 
 
 <h3 align="center">project_title</h3>
 
