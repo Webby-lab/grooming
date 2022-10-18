@@ -69,11 +69,14 @@ In this project I'd like to use Enums in the databes as a list, as shown in the 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+Converter makes a good job, we can simply use the list of allergy Enums from the database.
 <p align="center">
- <img src="img/adatbázis tábla dogs.png" alt="Logo" width="400">
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+ <img src="img/appointment_json.png" alt="Logo" width="300">
+ <img src="img/dogs_json.png" alt="Logo" width="300">
+ <img src="img/converter.png" alt="Logo" width="300">
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -82,10 +85,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Converter for Enums
+- [ ] Create, post, modify and delete pet or appointment from databese with Json object.
+- [ ] Near future
+    - [ ] add owners
+    - [ ] add groomers
+    - [ ] 
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
 
