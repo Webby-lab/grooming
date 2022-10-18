@@ -37,10 +37,7 @@ public class GroomerApplication implements CommandLineRunner {
 		Dog dog3 = new Dog("Liliu", 2, Arrays.asList(Allergy.TISZTÍTÓSZER, Allergy.SAMPON));
 		Dog dog4 = new Dog("Lilla", 2, Arrays.asList(Allergy.NONE));
 
-//		Dog dog1 = new Dog("Pist", 2, Allergy.GYÓGYSZER);
-//		Dog dog2 = new Dog("Pityu", 2, Allergy.NONE);
-//		Dog dog3 = new Dog("Liliu", 2, Allergy.SAMPON);
-//		Dog dog4 = new Dog("Lilla", 2, Allergy.ÉLELMISZER);
+
 
 		dogInMemoryRepository.saveAll(Arrays.asList(dog1, dog2, dog3, dog4));
 

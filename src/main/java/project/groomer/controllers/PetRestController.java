@@ -50,6 +50,9 @@ public class PetRestController {
     }
     @PutMapping("/api/appointments/{appId}")
     public ResponseEntity updateAppointment(@PathVariable Integer appId, @RequestBody Appointment appointment) {
+        if (appId != appointment.getId()) {
+            return ResponseEntity.badRequest().build();
+        }
         Appointment modifiedAppointment = appointmentService.update(appId, appointment);
         return ResponseEntity.ok(modifiedAppointment);
     }

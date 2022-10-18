@@ -23,20 +23,19 @@ public class AllergiesConverter implements AttributeConverter<List<Allergy>, Str
         }
         return text.substring(0, text.length() - 2);
     }
-
     @Override
     public List<Allergy> convertToEntityAttribute(String dballergies) {
         if (dballergies == null) {
             return null;
         }
         String[] splitted = dballergies.split(", ");
-        List<Allergy> aaa = new ArrayList<>();
+        List<Allergy> aller = new ArrayList<>();
         for (Allergy all : Allergy.values()) {
-            for (int i = 0; i < splitted.length; i++) {
-                if (all.getText().equals(splitted[i])) {
-                    aaa.add(all);
+            for (String s : splitted) {
+                if (all.getText().equals(s)) {
+                    aller.add(all);
                 }
             }
-        }return aaa;
+        }return aller;
     }
 }

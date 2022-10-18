@@ -11,8 +11,12 @@ public interface DogRepository extends CrudRepository<Dog, Integer> {
 
     List<Dog> findAll();
     Dog findByName(String name);
-
-        @Query(value = "SELECT name FROM dogrepair.dog", nativeQuery = true)
-    List<String> findAllNames();
     void deleteById(Integer id);
+
+        @Query(value = "SELECT name FROM dogrepair.dogs", nativeQuery = true)
+    List<String> findAllNames();
+
+        @Query(value = "SELECT * FROM dogrepair.dogs order by name asc", nativeQuery = true)
+    List<Dog> findAllSortedByName();
+
 }

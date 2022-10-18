@@ -3,7 +3,7 @@ package project.groomer.models;
 import javax.persistence.*;
 import java.util.*;
 
-@Entity
+@Entity(name = "dogs")
 public class Dog extends Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
